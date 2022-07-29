@@ -1,3 +1,5 @@
+import Group from "./group.js";
+import Phase from "./Phase.js";
 import Team from "./Team.js";
 
 export default class PlayOff {
@@ -6,6 +8,7 @@ export default class PlayOff {
       this.setUpConfig(config),
       this.setUpTeams(teams),
       this.setUpGroups(config.groups);
+      this.setUpPhases(config.phases);
   }
 
   /**
@@ -38,7 +41,7 @@ export default class PlayOff {
       });
     }
   }
-  /** 
+  /**
    * set up de groups from group class
    * @param {groups} from config.groups
    */
@@ -51,6 +54,22 @@ export default class PlayOff {
       this.config.groups.push({
         name: groups[group],
         config: temporalGroup[group].config,
+      });
+    }
+  }
+  /** 
+   * set up de phases from phase class
+   * @param {phases} from config.phases
+   */
+  setUpPhases(phases) {
+    let temporalPhases = [];
+    this.config.phases = [];
+    for (let phase in phases) {
+      let instancePhase = new Phase(phases[phase]);
+      temporalPhases.push(instancePhase);
+      this.config.phases.push({
+        name: phases[phase],
+        config: temporalPhases[phase].config,
       });
     }
   }

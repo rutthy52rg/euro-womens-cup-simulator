@@ -11,8 +11,9 @@ export default class PlayOff {
                 teams
             ),
             this.setUpTeams(teams),
-            this.setUpGroups(config.groups);
-        this.setUpPhases(config.phases);
+            this.setUpGroups(config.groups),
+            this.setTeamsInGroups(this.teams, this.config.groups),
+            this.setUpPhases(config.phases)
     }
     /**
      * set up default config
@@ -118,6 +119,31 @@ export default class PlayOff {
             ];
         }
         return array;
+    }
+    /**
+    * method to insert teams in each group without repeat
+    * @param {teams} from this.teams
+    * @param {groups} from  this.config.groups
+    */
+    setTeamsInGroups(teams, groups) {
+        if (teams.length % groups.length === 0) {
+            let teamsByGroup = teams.length / groups.length;
+            let currentTeams = [...teams];
+            let countGroup = 0;
+            let countTeams = 0;
+            while (countGroup < groups.length) {
+                while (countTeams < currentTeams.length) {
+                    let result = currentTeams.slice(countTeams, countTeams + teamsByGroup);
+                    countTeams += teamsByGroup;
+                    groups[countGroup].config.teams = result;
+                    countGroup++;
+                }
+            }
+        } else {
+            console.log(
+                "error, los grupos no salen equitativos, por favor comprueba número de equipos y número de grupos"
+            );
+        }
     }
 
 }

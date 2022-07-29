@@ -10,6 +10,14 @@ const teams = [
   "Manchester United",
   "Olimp. Lion",
   "Juventus",
+  "Manchester City",
+  "Chelsea",
+  "Bayern de Munich",
+  "Real Betis Balompié",
+  "Paris Saint-Germain",
+  "Liverpool F.B",
+  "Valencia C.F",
+  "Getafe C.F",
 ];
 
 const myPlayOff = new PlayOff(
@@ -18,8 +26,7 @@ const myPlayOff = new PlayOff(
   {
     groups: ["A", "B", "C", "D"],
     phases: ["CUARTOS DE FINAL", "SEMIFINAL", "FINAL"],
-  },
-  "COMIENZAN LAS FASES ELIMINATORIAS DEL TORNEO"
+  }
 );
 
 console.log("FINAL", myPlayOff);

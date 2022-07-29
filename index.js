@@ -54,7 +54,11 @@ for (let phase in phases) {
     for (let i of phases[phase].config.matches) {
         console.log(`${i.teams.team1.name} ${i.teams.team1.config.goalsTo} - ${i.teams.team2.config.goalsTo} ${i.teams.team2.name}  ==>  ${i.teams.winner}`)
     }
-
 }
-
 //TODO mensaje anunciando el equipo ganador
+console.log(
+    `\n
+=================================================
+  ${myPlayOff.msgFinish ? myPlayOff.winner + myPlayOff.msgFinish : 'FINALIZA EL TORNEO'}
+=================================================
+   \n`)

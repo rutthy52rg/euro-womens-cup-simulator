@@ -8,8 +8,8 @@ export default class PlayOff {
       this.setUpGroups(config.groups);
   }
 
-  /** 
-   * set up default config 
+  /**
+   * set up default config
    * @param {config} from instance
    */
   setUpConfig(config = {}) {
@@ -21,7 +21,7 @@ export default class PlayOff {
     this.config = Object.assign(defaultConfig, config);
   }
 
- /** 
+  /**
    * set up teams from class Team with their initial config
    * @param {teams} from config.grous
    */
@@ -38,6 +38,20 @@ export default class PlayOff {
       });
     }
   }
-
-
+  /** 
+   * set up de groups from group class
+   * @param {groups} from config.groups
+   */
+  setUpGroups(groups) {
+    let temporalGroup = [];
+    this.config.groups = [];
+    for (let group in groups) {
+      let instanceGroup = new Group(groups[group]);
+      temporalGroup.push(instanceGroup);
+      this.config.groups.push({
+        name: groups[group],
+        config: temporalGroup[group].config,
+      });
+    }
+  }
 } 

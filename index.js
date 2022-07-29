@@ -30,3 +30,9 @@ const myPlayOff = new Football("euro-cup", teams, {
 );
 
 console.log("FINAL", myPlayOff);
+
+//TODO mostrar 8 equipos participantes dividos en los grupos de A a D (4 grupos)
+//TODO mostrar 8 equipos participantes dividos en los grupos de A a D (4 grupos)
+//TODO mostrar el resultado de los partidos en cada ronda
+//TODO mostrar resultado de la final
+//TODO mensaje anunciando el equipo ganador

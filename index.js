@@ -46,7 +46,15 @@ groups.forEach((group) => {
     console.log(`Grupo ${group.name}: ${teamNames.join(', ')}`)
 })
 
-//TODO mostrar el resultado de los partidos en cada ronda
+//DONE mostrar el resultado de los partidos en cada ronda
+//DONE mostrar resultado de la final
+const phases = [...myPlayOff.config.phases];
+for (let phase in phases) {
+    console.log(`\n====  ${phases[phase].name}  ====\n`);
+    for (let i of phases[phase].config.matches) {
+        console.log(`${i.teams.team1.name} ${i.teams.team1.config.goalsTo} - ${i.teams.team2.config.goalsTo} ${i.teams.team2.name}  ==>  ${i.teams.winner}`)
+    }
 
-//TODO mostrar resultado de la final
+}
+
 //TODO mensaje anunciando el equipo ganador

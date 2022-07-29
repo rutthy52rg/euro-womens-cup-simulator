@@ -190,7 +190,4 @@ export default class Football extends PlayOff {
         match.teams.team2.name = names[1]
     }
 
-
-
-
 }

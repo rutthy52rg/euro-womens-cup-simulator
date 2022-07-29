@@ -12,11 +12,11 @@ export default class PlayOff {
             this.setTeamsInGroups(this.teams, this.config.groups),
             this.setUpPhases(config.phases);
     }
+
     /**
    * set up default config
    * @param {config} from instance
    */
-
     setUpConfig(config = {}) {
         const defaultConfig = {
             groups: [],
@@ -25,6 +25,7 @@ export default class PlayOff {
         };
         this.config = Object.assign(defaultConfig, config);
     }
+
     /**
      * set up teams from class Team with their initial config
      * @param {teams} from config.grous
@@ -42,6 +43,7 @@ export default class PlayOff {
             });
         }
     }
+
     /**
    * method to random order of teams
    * @param {teams} from this.teams
@@ -62,6 +64,7 @@ export default class PlayOff {
         }
         return array;
     }
+
     /**
      * set up de groups from group class
      * @param {groups} from config.groups
@@ -78,6 +81,7 @@ export default class PlayOff {
             });
         }
     }
+
     /**
      * set up de phases from phase class
      * @param {phases} from config.phases
@@ -94,15 +98,13 @@ export default class PlayOff {
             });
         }
     }
+    
     /**
        * method to extract random nums of elements from array, in this case extract 8 teams from 16 teams
        * @param {numbersToExtract} from config.numTeams
        * @param {arrToFilter} from teams from instance class
        */
-
-
     filterArrByIndexNotRepeat(numberToExtract, arrToFilter) {
-
         if (numberToExtract == 0) {
             console.log(null);
         }
@@ -120,11 +122,12 @@ export default class PlayOff {
         return arrResult
 
     }
+    
     /**
-  * method to insert teams in each group without repeat
-  * @param {teams} from this.teams
-  * @param {groups} from  this.config.groups
-  */
+     * method to insert teams in each group without repeat
+     * @param {teams} from this.teams
+     * @param {groups} from  this.config.groups
+     */
 
     setTeamsInGroups(teams, groups) {
         //console.log(teams)

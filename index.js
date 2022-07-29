@@ -1,4 +1,4 @@
-import PlayOff from "./classes/_PlayOff";
+import Football from "./classes/Football.js";
 
 
 const teams = [
@@ -20,13 +20,13 @@ const teams = [
   "Getafe C.F",
 ];
 
-const myPlayOff = new PlayOff(
-  "euro-cup",
-  teams,
-  {
+const myPlayOff = new Football("euro-cup", teams, {
     groups: ["A", "B", "C", "D"],
-    phases: ["CUARTOS DE FINAL", "SEMIFINAL", "FINAL"],
-  }
+    phases: ["CUARTOS DE FINAL", "SEMIFINALES", "TERCER Y CUARTO PUESTO", "FINAL"],
+    numTeams: 8
+},
+    "COMIENZAN LAS FASES ELIMINATORIAS DEL TORNEO",
+    " campeona de la EURO WOMEN'S CUP"
 );
 
 console.log("FINAL", myPlayOff);

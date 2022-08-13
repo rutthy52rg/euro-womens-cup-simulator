@@ -1,12 +1,10 @@
 *Ruth González Estévez*
 
 
-**Lo subo como rama main, que en el formulario de entregas se pide que la principal sea main y  que todo vaya ahí,  espero que esté bien... ains... :)**
+**Práctica EuroWomen's Cup Simulator, realizada 100% javascript usando clases**
+*Se crean 5 clases base y una clase extendida de playOff, football, que llevará métodos específicos de su tipología del juego y de su configuración*
+*Se crea una instancia de football para la generación de la simulación del caso de esta competición pasándole los parámetros necesarios para su ejecución*
 
-*Sólo he hecho el programa mínimo, pero estas vacaciones intentaré hacer la fase de grupos*
-*Creo que en algunos momentos me he hecho bola, siempre me pasaaaa, a ver si al menos está bien, jejej*
-
-*¡Muchas gracias por todo, ha estado muy bien, he aprendido mucho y ha sido divertido! ¡Felices Vacaciones!*
 
 *Estructura proyecto
 

@@ -20,7 +20,26 @@ const teams = [
     "Getafe C.F",
 ];
 
-const myPlayOff = new Football("euro-cup", teams, {
+const internationalTeams = [
+    "Inglaterra",
+    "Austria",
+    "Noruega",
+    "Irlanda",
+    "Alemania",
+    "España",
+    "Dinamarca",
+    "Finlandia",
+    "Suecia",
+    "Países Bajos",
+    "Suiza",
+    "Portugal",
+    "Francia",
+    "Bélgica",
+    "Islandia",
+    "Italia"
+]
+
+const myPlayOff = new Football("euro-cup", internationalTeams, {
     groups: ["A", "B", "C", "D"],
     phases: ["CUARTOS DE FINAL", "SEMIFINALES", "TERCER Y CUARTO PUESTO", "FINAL"],
     numTeams: 8

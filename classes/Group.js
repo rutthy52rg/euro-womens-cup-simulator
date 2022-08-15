@@ -1,7 +1,6 @@
 export default class Group {
   constructor(name, config = {}) {
-    this.name = name,
-      this.setUpConfig(config)
+    (this.name = name), this.setUpConfig(config);
   }
   setUpConfig(config = {}) {
     const defaultConfig = {

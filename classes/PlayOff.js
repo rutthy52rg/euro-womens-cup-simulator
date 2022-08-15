@@ -98,31 +98,36 @@ export default class PlayOff {
             });
         }
     }
-    
+    UserException(msge) {
+        this.exceptionMsge = msge;
+        this.exceptionName = "UserException";
+    }
+
     /**
        * method to extract random nums of elements from array, in this case extract 8 teams from 16 teams
        * @param {numbersToExtract} from config.numTeams
        * @param {arrToFilter} from teams from instance class
        */
-    filterArrByIndexNotRepeat(numberToExtract, arrToFilter) {
-        if (numberToExtract == 0) {
-            console.log(null);
-        }
-        // create this function because shuffle not working and i don't know why :(
-        let randomnumbers = new Set(), randomIndex;
-        while (randomnumbers.size < numberToExtract) {
-            randomnumbers.add(Math.floor(Math.random() * arrToFilter.length))
-        }
-        randomIndex = [...randomnumbers]
-        let arrCopy = [...arrToFilter]
-        let arrResult = []
-        for (let idx of randomIndex) {
-            arrResult.push(arrCopy[idx])
-        }
-        return arrResult
 
+    filterArrByIndexNotRepeat(numberToExtract=0, arrToFilter) {
+        if (numberToExtract !== 0) {
+            let randomnumbers = new Set(), randomIndex;
+            while (randomnumbers.size < numberToExtract) {
+                randomnumbers.add(Math.floor(Math.random() * arrToFilter.length))
+            }
+            randomIndex = [...randomnumbers]
+            let arrCopy = [...arrToFilter]
+            let arrResult = []
+            for (let idx of randomIndex) {
+                arrResult.push(arrCopy[idx])
+            }
+            return arrResult
+        } else {
+            throw "invalid num can't be 0";
+        }
     }
-    
+
+
     /**
      * method to insert teams in each group without repeat
      * @param {teams} from this.teams
@@ -145,9 +150,7 @@ export default class PlayOff {
                 }
             }
         } else {
-            console.log(
-                "error, los grupos no salen equitativos, por favor comprueba número de equipos y número de grupos"
-            );
+            throw "error, los grupos no salen equitativos, por favor comprueba número de equipos y número de grupos"
         }
     }
 }
